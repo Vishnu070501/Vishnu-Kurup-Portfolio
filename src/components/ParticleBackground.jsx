@@ -1,54 +1,41 @@
-
 import { useEffect, useRef } from 'react';
 
-interface Particle {
-  x: number;
-  y: number;
-  size: number;
-  speedX: number;
-  speedY: number;
-  opacity: number;
-  twinkleSpeed: number;
-  twinkleDirection: number;
-}
-
 const ParticleBackground = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const particlesRef = useRef<Particle[]>([]);
-  
+  const canvasRef = useRef(null);
+  const particlesRef = useRef([]);
+
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    
+
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
-    
+
+    // Resize canvas to match window size
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      initParticles();
     };
-    
-    const initParticles = () => {
+
+    // Create particles
+    const createParticles = () => {
       particlesRef.current = [];
-      
-      // Create particles
-      const particleCount = Math.min(Math.floor(window.innerWidth * 0.05), 200);
-      
+      const particleCount = Math.min(100, Math.floor((canvas.width * canvas.height) / 10000));
+
       for (let i = 0; i < particleCount; i++) {
         particlesRef.current.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          size: Math.random() * 2 + 0.5,
-          speedX: (Math.random() - 0.5) * 0.05,
-          speedY: (Math.random() - 0.5) * 0.05,
-          opacity: Math.random() * 0.5 + 0.3,
-          twinkleSpeed: Math.random() * 0.01 + 0.003,
-          twinkleDirection: Math.random() > 0.5 ? 1 : -1,
+          size: Math.random() < 0.8 ? Math.random() * 2 + 1 : Math.random() * 3 + 2,
+          speedX: (Math.random() - 0.5) * 0.5,
+          speedY: (Math.random() - 0.5) * 0.5,
+          opacity: Math.random() * 0.7 + 0.3,
+          twinkleSpeed: Math.random() * 0.02 + 0.01,
+          twinkleDirection: Math.random() < 0.5 ? 1 : -1
         });
       }
     };
-    
+
     const animate = () => {
       if (!ctx) return;
       
@@ -93,6 +80,7 @@ const ParticleBackground = () => {
     
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
+    createParticles();
     animate();
     
     return () => {
@@ -109,4 +97,4 @@ const ParticleBackground = () => {
   );
 };
 
-export default ParticleBackground;
+export default ParticleBackground; 

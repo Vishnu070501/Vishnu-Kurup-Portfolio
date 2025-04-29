@@ -1,4 +1,3 @@
-
 import { BriefcaseIcon } from 'lucide-react';
 import portfolioData from '../data/portfolio.json';
 
@@ -30,16 +29,16 @@ const Experience = () => {
               {/* Content */}
               <div className={`ml-12 md:ml-0 md:w-[calc(50%-40px)] ${index % 2 === 0 ? 'md:pr-10' : 'md:pl-10'}`}>
                 <div className="card-cosmic p-6 h-full hover:shadow-blue-900/20 hover:shadow-lg transition-shadow">
-                  <h3 className="text-xl font-bold text-gradient">{exp.title}</h3>
+                  <h3 className="text-xl font-bold text-gradient break-words">{exp.title}</h3>
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between my-2">
-                    <p className="text-lg font-medium">{exp.company}</p>
-                    <p className="text-sm text-gray-400">{exp.period}</p>
+                    <p className="text-lg font-medium break-words">{exp.company}</p>
+                    <p className="text-sm text-gray-400 whitespace-nowrap">{exp.period}</p>
                   </div>
-                  <p className="text-sm text-gray-400 mb-4">{exp.location}</p>
+                  <p className="text-sm text-gray-400 mb-4 break-words">{exp.location}</p>
                   
                   <ul className="space-y-2 list-disc pl-5">
                     {exp.responsibilities.map((resp, i) => (
-                      <li key={i} className="text-gray-300">{resp}</li>
+                      <li key={i} className="text-gray-300 break-words">{resp}</li>
                     ))}
                   </ul>
                 </div>

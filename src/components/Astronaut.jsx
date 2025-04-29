@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
@@ -39,7 +38,7 @@ const Astronaut = ({ className }) => {
         ref={floatRef}
         className="w-full h-full drop-shadow-lg"
       >
-        {/* Astronaut SVG - more cartoonish style */}
+        {/* Astronaut SVG - more realistic style */}
         <svg
           viewBox="0 0 200 200"
           fill="none"

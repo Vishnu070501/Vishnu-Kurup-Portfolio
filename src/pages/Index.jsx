@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -9,7 +8,7 @@ import ParticleBackground from "@/components/ParticleBackground";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-cosmic-dark">
+    <div className="min-h-screen">
       {/* Particle background */}
       <ParticleBackground />
       

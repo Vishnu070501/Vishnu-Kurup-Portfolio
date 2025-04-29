@@ -1,11 +1,9 @@
-
-import Earth from './Earth';
-import Astronaut from './Astronaut';
 import { useEffect, useRef } from 'react';
 import portfolioData from '../data/portfolio.json';
+import GlobeContainer from './GlobeContainer';
 
 const Hero = () => {
-  const { name, title, githubUrl } = portfolioData.personalInfo;
+  const { name, title, githubUrl, linkedinUrl, bio } = portfolioData.personalInfo;
   const starsRef = useRef(null);
 
   useEffect(() => {
@@ -79,8 +77,8 @@ const Hero = () => {
           <h2 className="text-2xl md:text-3xl font-medium mb-6 text-blue-200">
             {title}
           </h2>
-          <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-lg">
-            Creating stunning web experiences with modern technologies like React, Next.js, Django, and Spring Boot.
+          <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-lg mx-auto md:mx-0">
+            {bio || "Creating stunning web experiences with modern technologies like React, Next.js, Django, and Spring Boot."}
           </p>
           <div className="flex flex-wrap gap-4 justify-center md:justify-start">
             <a 
@@ -97,13 +95,20 @@ const Hero = () => {
             >
               GitHub
             </a>
+            <a 
+              href={linkedinUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-8 py-3 rounded-lg bg-white/10 border border-white/20 font-medium hover:bg-white/20 transition-colors"
+            >
+              LinkedIn
+            </a>
           </div>
         </div>
         
-        {/* Earth and Astronaut */}
-        <div className="relative flex-1 flex items-center justify-center">
-          <Earth className="max-w-[80vw] md:max-w-full" />
-          <Astronaut className="absolute -left-10 top-1/4" />
+        {/* Globe and Astronaut */}
+        <div className="relative flex-1 flex items-center justify-center w-full h-[400px] md:h-[500px]">
+          <GlobeContainer />
         </div>
       </div>
       
