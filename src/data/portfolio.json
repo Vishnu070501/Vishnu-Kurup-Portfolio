@@ -1,0 +1,92 @@
+
+{
+  "personalInfo": {
+    "name": "Vishnu Kurup",
+    "title": "Full-Stack Web Developer",
+    "email": "vishnu.vrap7@gmail.com",
+    "phone": "8459452363",
+    "location": "Faridabad, India",
+    "githubUrl": "https://github.com/Vishnu070501",
+    "linkedinUrl": "https://www.linkedin.com/in/vishnu-kurup-622658210"
+  },
+  "skills": {
+    "languages": ["JavaScript", "Java", "Python", "C", "C++"],
+    "frameworks": ["React.js", "Next.js", "Redux", "Tanstack Query", "Django", "Spring Boot", "Angular"],
+    "databases": ["MySQL", "PostgreSQL"]
+  },
+  "experiences": [
+    {
+      "title": "Full-Stack Developer",
+      "company": "Ornate Solar",
+      "period": "Nov 2023 – Apr 2025",
+      "location": "Okhla, Delhi",
+      "responsibilities": [
+        "Developed internal portals using React.js, Next.js, Redux, and Tanstack Query.",
+        "Built scalable backend APIs using Django for procurement and inventory management.",
+        "Collaborated cross-functionally with Procurement, Marketing, and R&D teams."
+      ]
+    },
+    {
+      "title": "Software Developer Intern",
+      "company": "Aspire Systems",
+      "period": "Aug 2022 – Feb 2023",
+      "location": "Chennai / Remote",
+      "responsibilities": [
+        "Refactored backend modules using Spring Boot; migrated libraries like iText and PDFBox.",
+        "Contributed to internal meeting scheduler frontend using Angular.",
+        "Worked in Agile teams and followed standard SDLC practices."
+      ]
+    },
+    {
+      "title": "Software Developer Intern",
+      "company": "Zoho Corporation",
+      "period": "Feb 2022 – Jun 2022",
+      "location": "Coimbatore, Tamil Nadu",
+      "responsibilities": [
+        "Built a Web Student Tracker project using Java, JSP, Servlets, and MySQL.",
+        "Worked on CRM backend, optimized event creation flow, and updated legacy libraries.",
+        "Gained exposure to Angular development and large-scale systems."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Raw Materials Inventory Management (Backend)",
+      "description": "Backend system to track raw material check-ins, production steps, and outputs. Implemented CRUD operations and multi-step production handling.",
+      "technologies": ["Django", "PostgreSQL"],
+      "githubUrl": "https://github.com/Vishnu070501/RawMaterialsManagementInventory",
+      "liveUrl": null,
+      "image": "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb"
+    },
+    {
+      "title": "Raw Materials Inventory Management (Frontend)",
+      "description": "Frontend for managing raw materials inventory. Seamless API integration for real-time updates and production workflows.",
+      "technologies": ["React.js", "Next.js", "Redux", "Tanstack Query"],
+      "githubUrl": "https://github.com/Vishnu070501/RawMaterialsManagementInventoryFrontEnd",
+      "liveUrl": null,
+      "image": "https://images.unsplash.com/photo-1501854140801-50d01698950b"
+    },
+    {
+      "title": "Book Your Tickets",
+      "description": "REST API to book, modify, and cancel tickets with show management functionality.",
+      "technologies": ["Spring Boot", "MySQL"],
+      "githubUrl": "https://github.com/Vishnu070501/bookyourtickets",
+      "liveUrl": null,
+      "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e"
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.E. Electronics & Communication",
+      "institution": "Karpagam Institute of Technology, Coimbatore",
+      "period": "Aug 2019 – May 2023",
+      "grade": "CGPA: 7.92"
+    }
+  ],
+  "coursework": [
+    "Data Structures", 
+    "Design and Analysis of Algorithms", 
+    "Object-Oriented Programming", 
+    "Database Management Systems"
+  ]
+}

@@ -1,0 +1,124 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+    
+    --muted: 223 47% 11%;
+    --muted-foreground: 215 20% 65%;
+    
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+    
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20% 65%;
+    
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+    
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+    
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+    
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --ring: 216 34% 17%;
+    
+    --radius: 0.5rem;
+
+    /* Custom cosmic theme colors */
+    --cosmic: 224 71% 4%;
+    --cosmic-light: 215 20% 30%;
+    --space: 220 54% 7%;
+    --space-dark: 227 67% 3%;
+    --nebula: 267 75% 31%;
+    --star: 210 40% 98%;
+    --cosmic-purple: 267 75% 31%;
+    --cosmic-blue: 217 91% 60%;
+    --earth-glow: 198 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-cosmic text-foreground;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background-color: #1a103d;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply py-20 px-4 container mx-auto min-h-[80vh] scroll-mt-16;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-12 text-center relative;
+  }
+  
+  .section-title::after {
+    content: "";
+    @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-4 h-1 w-16;
+    background: linear-gradient(to right, #3b82f6, #7e22ce);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(to right, #3b82f6, #7e22ce);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .card-cosmic {
+    @apply bg-space/80 backdrop-blur-sm border border-cosmic-light/20 rounded-xl shadow-lg transition-all;
+  }
+  
+  .cosmic-glow {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5), 
+                0 0 60px rgba(126, 34, 206, 0.3);
+  }
+  
+  .earth-container {
+    @apply relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] mx-auto;
+    perspective: 1500px;
+    transform-style: preserve-3d;
+  }
+
+  @media (min-width: 768px) {
+    .earth-container {
+      perspective: 2000px;
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 6s infinite ease-in-out;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.4; }
+  }
+}
+
+/* Add styles for rendering the globe */
+.earth-container * {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
