@@ -2,7 +2,7 @@
 
 # Create textures directory if it doesn't exist
 mkdir -p public/textures
-
+ 
 # Download Earth textures
 curl -o public/textures/earth_daymap.jpg https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_atmos_2048.jpg
 curl -o public/textures/earth_clouds.jpg https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_clouds_1024.png

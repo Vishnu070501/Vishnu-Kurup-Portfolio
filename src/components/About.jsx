@@ -18,13 +18,13 @@ const About = () => {
           <div className="space-y-4 text-gray-300">
             <p>
               {personalInfo.bio || "I'm a passionate Full-Stack Developer with a strong foundation in both frontend and backend technologies. My journey in web development started with a curiosity about how things work on the internet, which led me to explore various technologies and frameworks."}
-            </p>
+          </p>
             <p>
               {personalInfo.specialization || "I specialize in creating responsive, user-friendly web applications using modern technologies. My approach combines technical expertise with a keen eye for design and user experience."}
-            </p>
+          </p>
             <p>
               {personalInfo.interests || "When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing my knowledge through technical writing."}
-            </p>
+          </p>
           </div>
         </div>
         
@@ -95,17 +95,17 @@ const About = () => {
                 </div>
                 <div>
                   <h4 className="text-sm font-medium text-gray-400 mb-2">Databases</h4>
-                  <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2">
                     {skills.databases.map((skill) => (
-                      <span 
-                        key={skill}
+                  <span 
+                    key={skill}
                         className="px-3 py-1 bg-green-500/10 border border-green-500/20 rounded-full text-sm text-green-300 break-words"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
               </div>
             </div>
 
