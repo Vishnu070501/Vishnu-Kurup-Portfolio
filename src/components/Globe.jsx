@@ -1,48 +1,11 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { OrbitControls, Stars } from '@react-three/drei';
 import * as THREE from 'three';
 
-const Globe = ({ className }) => {
+const Globe = ({ className, onLoad }) => {
   const meshRef = useRef();
   const [isDragging, setIsDragging] = useState(false);
-  const [earthTexture, setEarthTexture] = useState(null);
-  const [cloudTexture, setCloudTexture] = useState(null);
-  const [bumpTexture, setBumpTexture] = useState(null);
-  const [specularTexture, setSpecularTexture] = useState(null);
-
-  useEffect(() => {
-    // Load Earth textures
-    const textureLoader = new THREE.TextureLoader();
-    
-    // Load Earth texture
-    textureLoader.load('/textures/earth_daymap.jpg', (texture) => {
-      texture.wrapS = THREE.RepeatWrapping;
-      texture.wrapT = THREE.RepeatWrapping;
-      setEarthTexture(texture);
-    });
-
-    // Load cloud texture
-    textureLoader.load('/textures/earth_clouds.jpg', (texture) => {
-      texture.wrapS = THREE.RepeatWrapping;
-      texture.wrapT = THREE.RepeatWrapping;
-      setCloudTexture(texture);
-    });
-
-    // Load bump texture for terrain
-    textureLoader.load('/textures/earth_normal_map.jpg', (texture) => {
-      texture.wrapS = THREE.RepeatWrapping;
-      texture.wrapT = THREE.RepeatWrapping;
-      setBumpTexture(texture);
-    });
-
-    // Load specular texture for water reflection
-    textureLoader.load('/textures/earth_specular_map.jpg', (texture) => {
-      texture.wrapS = THREE.RepeatWrapping;
-      texture.wrapT = THREE.RepeatWrapping;
-      setSpecularTexture(texture);
-    });
-  }, []);
 
   // Auto-rotation when not dragging
   useFrame((state, delta) => {
@@ -54,7 +17,7 @@ const Globe = ({ className }) => {
   return (
     <group className={className}>
       {/* Ambient light */}
-      <ambientLight intensity={0.3} />
+      <ambientLight intensity={0.5} />
       
       {/* Directional light (sun) */}
       <directionalLight
@@ -66,27 +29,10 @@ const Globe = ({ className }) => {
       {/* Earth sphere */}
       <mesh ref={meshRef}>
         <sphereGeometry args={[1, 128, 128]} />
-        <meshPhongMaterial
-          map={earthTexture}
-          bumpMap={bumpTexture}
-          bumpScale={0.1}
-          specularMap={specularTexture}
-          specular={new THREE.Color(0x666666)}
-          shininess={15}
-          emissive={new THREE.Color(0x000000)}
-          emissiveIntensity={0.1}
-        />
-      </mesh>
-
-      {/* Cloud layer */}
-      <mesh>
-        <sphereGeometry args={[1.01, 128, 128]} />
-        <meshPhongMaterial
-          map={cloudTexture}
-          transparent={true}
-          opacity={0.3}
-          depthWrite={false}
-          blending={THREE.AdditiveBlending}
+        <meshStandardMaterial
+          color={0x1a365d}
+          metalness={0.1}
+          roughness={0.7}
         />
       </mesh>
 
