@@ -1,16 +1,18 @@
 import { useRef, useState, useEffect } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { OrbitControls, Stars } from '@react-three/drei';
+import { OrbitControls, Stars, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 
 const Globe = ({ className, onLoad }) => {
   const meshRef = useRef();
   const [isDragging, setIsDragging] = useState(false);
 
-  // Call onLoad immediately since we're not loading textures
-  useEffect(() => {
+  // Load Earth texture
+  const earthTexture = useTexture('/textures/earth_daymap.jpg', (texture) => {
+    texture.wrapS = THREE.RepeatWrapping;
+    texture.wrapT = THREE.RepeatWrapping;
     onLoad?.();
-  }, [onLoad]);
+  });
 
   // Auto-rotation when not dragging
   useFrame((state, delta) => {
@@ -22,22 +24,26 @@ const Globe = ({ className, onLoad }) => {
   return (
     <group className={className}>
       {/* Ambient light */}
-      <ambientLight intensity={0.5} />
+      <ambientLight intensity={0.7} />
       
       {/* Directional light (sun) */}
       <directionalLight
         position={[5, 3, 5]}
-        intensity={1.5}
+        intensity={2}
         castShadow
       />
 
       {/* Earth sphere */}
       <mesh ref={meshRef}>
         <sphereGeometry args={[1, 128, 128]} />
-        <meshStandardMaterial
-          color={0x1a365d}
-          metalness={0.1}
-          roughness={0.7}
+        <meshPhongMaterial
+          map={earthTexture}
+          shininess={30}
+          specular={0x444444}
+          emissive={0x000000}
+          emissiveIntensity={0}
+          transparent={false}
+          opacity={1}
         />
       </mesh>
 
@@ -47,7 +53,7 @@ const Globe = ({ className, onLoad }) => {
         <meshPhongMaterial
           color={0x88ccff}
           transparent={true}
-          opacity={0.15}
+          opacity={0.1}
           side={THREE.BackSide}
           blending={THREE.AdditiveBlending}
         />
