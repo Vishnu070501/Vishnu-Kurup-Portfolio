@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { OrbitControls, Stars } from '@react-three/drei';
 import * as THREE from 'three';
@@ -6,6 +6,11 @@ import * as THREE from 'three';
 const Globe = ({ className, onLoad }) => {
   const meshRef = useRef();
   const [isDragging, setIsDragging] = useState(false);
+
+  // Call onLoad immediately since we're not loading textures
+  useEffect(() => {
+    onLoad?.();
+  }, [onLoad]);
 
   // Auto-rotation when not dragging
   useFrame((state, delta) => {
