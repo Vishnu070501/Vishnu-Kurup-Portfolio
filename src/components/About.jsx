@@ -4,6 +4,40 @@ import portfolioData from '../data/portfolio.json';
 const About = () => {
   const { personalInfo, skills, education, coursework } = portfolioData;
 
+  // Define color schemes for different skill categories
+  const skillColorSchemes = {
+    languages: {
+      bg: 'bg-blue-500/10',
+      border: 'border-blue-500/20',
+      text: 'text-blue-300'
+    },
+    frameworks: {
+      bg: 'bg-purple-500/10',
+      border: 'border-purple-500/20',
+      text: 'text-purple-300'
+    },
+    databases: {
+      bg: 'bg-green-500/10',
+      border: 'border-green-500/20',
+      text: 'text-green-300'
+    },
+    devops: {
+      bg: 'bg-orange-500/10',
+      border: 'border-orange-500/20',
+      text: 'text-orange-300'
+    },
+    // Default color scheme for any new categories
+    default: {
+      bg: 'bg-gray-500/10',
+      border: 'border-gray-500/20',
+      text: 'text-gray-300'
+    }
+  };
+
+  // Helper function to get color scheme for a skill category
+  const getColorScheme = (category) => {
+    return skillColorSchemes[category] || skillColorSchemes.default;
+  };
   return (
     <section id="about" className="section-container relative">
       {/* Background decoration */}
@@ -67,45 +101,26 @@ const About = () => {
             <div className="mt-6">
               <h3 className="text-xl font-bold mb-4">Skills</h3>
               <div className="space-y-4">
-                <div>
-                  <h4 className="text-sm font-medium text-gray-400 mb-2">Languages</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {skills.languages.map((skill) => (
-                      <span 
-                        key={skill}
-                        className="px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full text-sm text-blue-300 break-words"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <h4 className="text-sm font-medium text-gray-400 mb-2">Frameworks</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {skills.frameworks.map((skill) => (
-                      <span 
-                        key={skill}
-                        className="px-3 py-1 bg-purple-500/10 border border-purple-500/20 rounded-full text-sm text-purple-300 break-words"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <h4 className="text-sm font-medium text-gray-400 mb-2">Databases</h4>
-              <div className="flex flex-wrap gap-2">
-                    {skills.databases.map((skill) => (
-                  <span 
-                    key={skill}
-                        className="px-3 py-1 bg-green-500/10 border border-green-500/20 rounded-full text-sm text-green-300 break-words"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
+                {Object.entries(skills).map(([category, skillList]) => {
+                  const colorScheme = getColorScheme(category);
+                  return (
+                    <div key={category}>
+                      <h4 className="text-sm font-medium text-gray-400 mb-2">
+                        {category.charAt(0).toUpperCase() + category.slice(1)}
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {skillList.map((skill) => (
+                          <span 
+                            key={skill}
+                            className={`px-3 py-1 ${colorScheme.bg} border ${colorScheme.border} rounded-full text-sm ${colorScheme.text} break-words`}
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
 

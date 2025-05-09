@@ -7,14 +7,15 @@
     "location": "Faridabad, India",
     "githubUrl": "https://github.com/Vishnu070501",
     "linkedinUrl": "https://www.linkedin.com/in/vishnu-kurup-622658210",
-    "bio": "I'm a passionate Full-Stack Developer with a strong foundation in both frontend and backend technologies. My journey in web development started with a curiosity about how things work on the internet, which led me to explore various technologies and frameworks.",
-    "specialization": "I specialize in creating responsive, user-friendly web applications using modern technologies like React, Next.js, and Django. My approach combines technical expertise with a keen eye for design and user experience.",
+    "bio": "I'm a passionate Full-Stack Developer with a strong foundation in both frontend and backend technologies. My journey in web development started with a curiosity about how things work on the internet, which led me to explore various technologies and frameworks. Recently, I've expanded my skills to include containerization with Docker and multi-container orchestration.",
+    "specialization": "I specialize in creating responsive, user-friendly web applications using modern technologies like React, Next.js, and Django. My approach combines technical expertise with a keen eye for design and user experience. I'm also proficient in containerizing applications with Docker and managing multi-container environments with Docker Compose.",
     "interests": "When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing my knowledge through technical writing."
   },
   "skills": {
     "languages": ["JavaScript", "Java", "Python", "C", "C++"],
     "frameworks": ["React.js", "Next.js", "Redux", "Tanstack Query", "Django", "Spring Boot", "Angular"],
-    "databases": ["MySQL", "PostgreSQL"]
+    "databases": ["MySQL", "PostgreSQL"],
+    "devops": ["Docker", "Docker Compose", "CI/CD"]
   },
   "experiences": [
     {
@@ -52,6 +53,14 @@
     }
   ],
   "projects": [
+    {
+      "title": "Task Manager (Dockerized Full-Stack App)",
+      "description": "Multi-container task management application with user authentication and task CRUD operations. Containerized Express backend and MongoDB using Docker, orchestrated via Docker Compose.",
+      "technologies": ["Express.js", "MongoDB", "Docker", "Docker Compose"],
+      "githubUrl": "https://github.com/Vishnu070501/task-manager-docker-express",
+      "liveUrl": null,
+      "image": "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d"
+    },
     {
       "title": "Raw Materials Inventory Management (Backend)",
       "description": "Backend system to track raw material check-ins, production steps, and outputs. Implemented CRUD operations and multi-step production handling.",
