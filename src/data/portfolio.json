@@ -26,6 +26,9 @@
       "responsibilities": [
         "Developed internal portals using React.js, Next.js, Redux, and Tanstack Query.",
         "Built scalable backend APIs using Django for procurement and inventory management.",
+        "Containerized the entire application stack using Docker, creating separate containers for frontend, backend, and database services.",
+        "Implemented Docker Compose for orchestrating multi-container development and production environments, improving deployment consistency and developer onboarding.",
+        "Designed a CI/CD pipeline that builds Docker images and deploys containerized applications to production.",
         "Collaborated cross-functionally with Procurement, Marketing, and R&D teams."
       ]
     },
