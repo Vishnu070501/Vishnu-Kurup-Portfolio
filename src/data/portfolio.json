@@ -15,7 +15,7 @@
     "languages": ["JavaScript", "Java", "Python", "C", "C++"],
     "frameworks": ["React.js", "Next.js", "Redux", "Tanstack Query", "Django", "Spring Boot", "Angular"],
     "databases": ["MySQL", "PostgreSQL"],
-    "devops": ["Docker", "Docker Compose", "CI/CD"]
+    "devops": ["Docker", "Docker Compose", "CI/CD", "Kubernetes"]
   },
   "experiences": [
     {
@@ -29,6 +29,7 @@
         "Containerized the entire application stack using Docker, creating separate containers for frontend, backend, and database services.",
         "Implemented Docker Compose for orchestrating multi-container development and production environments, improving deployment consistency and developer onboarding.",
         "Designed a CI/CD pipeline that builds Docker images and deploys containerized applications to production.",
+        "Implemented Kubernetes clusters for managing containerized applications in production environments.",
         "Collaborated cross-functionally with Procurement, Marketing, and R&D teams."
       ]
     },
