@@ -20,6 +20,17 @@
   "experiences": [
     {
       "title": "Full-Stack Developer",
+      "company": "Ilizien Pvt. Ltd.",
+      "period": "Jun 2025 – Present",
+      "location": "Remote",
+      "responsibilities": [
+      "Developed internal portals using React.js, Redux, and Tanstack Query.",
+      "Collaborated cross-functionally with Procurement, Marketing, and R&D teams.",
+      "Worked on multiple applications in collaboration with the Indian Navy, including ship maintenance systems, Indian Naval Canteen Service solutions, and the Hull Insights project."
+    ]
+    },
+    {
+      "title": "Full-Stack Developer",
       "company": "Ornate Solar",
       "period": "Nov 2023 – Apr 2025",
       "location": "Okhla, Delhi",
